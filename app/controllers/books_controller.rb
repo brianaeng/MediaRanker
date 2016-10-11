@@ -18,12 +18,17 @@ class BooksController < ApplicationController
     @book.num_votes = 0
     @book.author = params[:book][:author]
     @book.description = params[:book][:description]
+
+    redirect_to book_path(@book.id)
   end
 
   def upvote
     find
 
     @book.num_votes += 1
+    @book.save
+
+    redirect_to book_path(@book.id)
   end
 
   def edit
@@ -34,11 +39,12 @@ class BooksController < ApplicationController
     find
 
     @book.title = params[:book][:title]
-    # @book.num_votes = @book.num_votes
     @book.author = params[:book][:author]
     @book.description = params[:book][:description]
 
     @book.save
+
+    redirect_to book_path(@book.id)
   end
 
   def destroy

@@ -20,12 +20,17 @@ class AlbumsController < ApplicationController
     @album.description = params[:album][:description]
 
     @album.save
+
+    redirect_to album_path(@album.id)
   end
 
   def upvote
     find
 
     @album.num_votes += 1
+    @album.save
+
+    redirect_to album_path(@album.id)
   end
 
   def edit
@@ -33,6 +38,8 @@ class AlbumsController < ApplicationController
   end
 
   def update
+    find
+
     @album.title = params[:album][:title]
     # @album.num_votes = @album.num_votes #Do I need this?
     @album.artist = params[:album][:artist]
@@ -40,7 +47,7 @@ class AlbumsController < ApplicationController
 
     @album.save
 
-    redirect_to album_show_path
+    redirect_to album_path(@album.id)
   end
 
   def destroy

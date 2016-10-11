@@ -1,2 +1,8 @@
 <h1>Movies#index</h1>
-<p>Find me in app/views/movies/index.html.erb</p>
+<% @movies.each do |movie| %>
+  Ranked: <%= movie.num_votes %>
+  <%= link_to movie.title, {action: 'show', id: movie}, method: :get %>
+  <%= button_to "Upvote", movie_upvote_path(movie.id), method: :patch %>
+<% end %>
+<%= button_to "View All Media", root_path, method: :get %>
+<%= button_to "Add Movie", new_movie_path, method: :get %>

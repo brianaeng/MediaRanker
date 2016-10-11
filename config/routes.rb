@@ -3,6 +3,11 @@ Rails.application.routes.draw do
 
   resources :albums, :books, :movies
 
+  patch 'albums/:id/upvote', to: 'albums#upvote', as: 'album_upvote'
+
+  patch 'books/:id/upvote', to: 'books#upvote', as: 'book_upvote'
+
+  patch 'movies/:id/upvote', to: 'movies#upvote', as: 'movie_upvote'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

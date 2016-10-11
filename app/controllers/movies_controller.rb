@@ -18,6 +18,17 @@ class MoviesController < ApplicationController
     @movie.num_votes = 0
     @movie.director = params[:movie][:director]
     @movie.description = params[:movie][:description]
+
+    redirect_to movie_path(@movie.id)
+  end
+
+  def upvote
+    find
+
+    @movie.num_votes += 1
+    @movie.save
+
+    redirect_to movie_path(@movie.id)
   end
 
   def edit
@@ -32,6 +43,8 @@ class MoviesController < ApplicationController
     @movie.description = params[:movie][:description]
 
     @movie.save
+
+    redirect_to movie_path(@movie.id)
   end
 
   def destroy
@@ -42,6 +55,6 @@ class MoviesController < ApplicationController
 
   private
   def find
-    @movie = Movie.find(params[:id].to_i)
+    @movie = Movie.find(params[:id])
   end
 end
