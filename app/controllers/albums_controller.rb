@@ -41,7 +41,6 @@ class AlbumsController < ApplicationController
     find
 
     @album.title = params[:album][:title]
-    # @album.num_votes = @album.num_votes #Do I need this?
     @album.artist = params[:album][:artist]
     @album.description = params[:album][:description]
 
