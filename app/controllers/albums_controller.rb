@@ -1,6 +1,6 @@
 class AlbumsController < ApplicationController
   def index
-    @albums = Album.all
+    @albums = Album.all.sort_by { |album_hash| [album_hash[:num_votes], (-album_hash[:id])] }.reverse
   end
 
   def show
@@ -54,6 +54,8 @@ class AlbumsController < ApplicationController
     find
 
     @album.destroy
+
+    redirect_to albums_path
   end
 
   private

@@ -1,6 +1,8 @@
 class MoviesController < ApplicationController
   def index
-    @movies = Movie.all
+    @all_movies = Movie.all
+
+    @movies = @all_movies.sort_by { |movie_hash| [movie_hash[:num_votes], (-movie_hash[:id])] }.reverse
   end
 
   def show
@@ -18,6 +20,8 @@ class MoviesController < ApplicationController
     @movie.num_votes = 0
     @movie.director = params[:movie][:director]
     @movie.description = params[:movie][:description]
+
+    @movie.save
 
     redirect_to movie_path(@movie.id)
   end
@@ -51,6 +55,8 @@ class MoviesController < ApplicationController
     find
 
     @movie.destroy
+
+    redirect_to movies_path
   end
 
   private

@@ -1,2 +1,17 @@
-<h1>Movies#show</h1>
-<p>Find me in app/views/movies/show.html.erb</p>
+<h1><%= @movie.title %></h1>
+
+Directed by: <%= @movie.director %>
+
+Ranked: <%= @movie.num_votes %>
+
+<%= @movie.description %>
+
+<%= button_to "Upvote", movie_upvote_path(@movie.id), method: :patch %>
+
+<%= button_to "Edit #{@movie.title}", edit_movie_path(@movie.id), method: :get %>
+
+<%= button_to "DELETE", movie_path(@movie.id), method: :delete, data: {confirm: "Are you sure?"} %>
+
+<%= button_to "View All Movies", movies_path, method: :get %>
+
+<%= button_to "View All Media", root_path, method: :get %>

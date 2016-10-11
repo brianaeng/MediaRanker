@@ -1,2 +1,17 @@
-<h1>Books#show</h1>
-<p>Find me in app/views/books/show.html.erb</p>
+<h1><%= @book.title %></h1>
+
+Written by: <%= @book.author %>
+
+Ranked: <%= @book.num_votes %>
+
+<%= @book.description %>
+
+<%= button_to "Upvote", book_upvote_path(@book.id), method: :patch %>
+
+<%= button_to "Edit #{@book.title}", edit_book_path(@book.id), method: :get %>
+
+<%= button_to "DELETE", book_path(@book.id), method: :delete, data: {confirm: "Are you sure?"} %>
+
+<%= button_to "View All Books", books_path, method: :get %>
+
+<%= button_to "View All Media", root_path, method: :get %>

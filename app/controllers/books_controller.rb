@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
   def index
-    @books = Book.all
+    @books = Book.all.sort_by { |book_hash| [book_hash[:num_votes], (-book_hash[:id])] }.reverse
   end
 
   def show
@@ -18,6 +18,8 @@ class BooksController < ApplicationController
     @book.num_votes = 0
     @book.author = params[:book][:author]
     @book.description = params[:book][:description]
+
+    @book.save
 
     redirect_to book_path(@book.id)
   end
@@ -51,6 +53,8 @@ class BooksController < ApplicationController
     find
 
     @book.destroy
+
+    redirect_to books_path
   end
 
   private
