@@ -21,7 +21,11 @@ class AlbumsController < ApplicationController
 
     @album.save
 
-    redirect_to album_path(@album.id)
+    if @album.save
+      redirect_to album_path(@album.id)
+    else
+      redirect_to new_album_path
+    end
   end
 
   def upvote

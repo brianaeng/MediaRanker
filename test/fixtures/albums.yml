@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
+album1:
+  title: TestAlbum1
   num_votes: 1
-  artist: MyString
+  artist: Artist1
   description: MyText
 
-two:
-  title: MyString
+album2:
+  title: TestAlbum2
   num_votes: 1
-  artist: MyString
+  artist: Artist2
   description: MyText

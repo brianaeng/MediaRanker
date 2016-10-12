@@ -23,7 +23,11 @@ class MoviesController < ApplicationController
 
     @movie.save
 
-    redirect_to movie_path(@movie.id)
+    if @movie.save
+      redirect_to movie_path(@movie.id)
+    else
+      redirect_to new_movie_path
+    end
   end
 
   def upvote

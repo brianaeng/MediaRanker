@@ -21,7 +21,11 @@ class BooksController < ApplicationController
 
     @book.save
 
-    redirect_to book_path(@book.id)
+    if @book.save
+      redirect_to book_path(@book.id)
+    else
+      redirect_to new_book_path
+    end
   end
 
   def upvote

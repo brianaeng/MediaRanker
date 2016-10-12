@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: MyString
+book1:
+  title: TestBook1
   num_votes: 1
-  author: MyString
+  author: Author1
   description: MyText
 
-two:
-  title: MyString
+book2:
+  title: TestBook2
   num_votes: 1
-  author: MyString
+  author: Author2
   description: MyText
