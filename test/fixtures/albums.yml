@@ -7,7 +7,7 @@ album1:
   description: MyText
 
 album2:
-  title: TestAlbum2
+  title: 
   num_votes: 1
   artist: Artist2
   description: MyText

@@ -58,13 +58,18 @@ class MoviesController < ApplicationController
   def destroy
     find
 
-    @movie.destroy
-
-    redirect_to movies_path
+    if @movie.class == Movie
+      @movie.destroy
+      redirect_to movies_path
+    end
   end
 
   private
   def find
-    @movie = Movie.find(params[:id])
+    if Movie.exists?(params[:id].to_i)
+      @movie = Movie.find(params[:id])
+    else
+      render status: 404
+    end
   end
 end

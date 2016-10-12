@@ -42,6 +42,7 @@ class AlbumsControllerTest < ActionController::TestCase
   test "should get edit" do
     get :edit, {id: albums(:album1).id}
     assert_response :success
+    assert_template 'albums/edit'
   end
 
   test "should be able to update" do
@@ -56,6 +57,11 @@ class AlbumsControllerTest < ActionController::TestCase
     assert_redirected_to albums_path
   end
 
+  test "should error on trying to destroy something that doesn't exist" do
+    delete :destroy, {id: 324987324}
+    assert_response :missing
+  end
+  
   test "destroying should subtract one to the database" do
     assert_difference('Album.count', -1) do
       delete :destroy, {id: albums(:album1).id}

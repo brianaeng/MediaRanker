@@ -56,13 +56,19 @@ class AlbumsController < ApplicationController
   def destroy
     find
 
-    @album.destroy
+    if @album.class == Album
+      @album.destroy
+      redirect_to albums_path
+    end
 
-    redirect_to albums_path
   end
 
   private
   def find
-    @album = Album.find(params[:id].to_i)
+    if Album.exists?(params[:id].to_i)
+      @album = Album.find(params[:id].to_i)
+    else
+      render status: 404
+    end
   end
 end

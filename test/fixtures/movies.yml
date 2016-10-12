@@ -7,7 +7,7 @@ movie1:
   description: MyText
 
 movie2:
-  title: TestMovie2
+  title: 
   num_votes: 1
   director: Director2
   description: MyText

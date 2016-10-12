@@ -56,13 +56,18 @@ class BooksController < ApplicationController
   def destroy
     find
 
-    @book.destroy
-
-    redirect_to books_path
+    if @book.class == Book
+      @book.destroy
+      redirect_to books_path
+    end
   end
 
   private
   def find
-    @book = Book.find(params[:id].to_i)
+    if Book.exists?(params[:id].to_i)
+      @book = Book.find(params[:id].to_i)
+    else
+      render status: 404
+    end
   end
 end
