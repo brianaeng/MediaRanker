@@ -1,6 +1,6 @@
 class AlbumsController < ApplicationController
   def index
-    @albums = Album.all.sort_by { |album_hash| [album_hash[:num_votes], (-album_hash[:id])] }.reverse
+    @albums = Album.order('num_votes DESC, id').limit(10)
   end
 
   def show

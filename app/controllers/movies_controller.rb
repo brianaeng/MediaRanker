@@ -1,8 +1,6 @@
 class MoviesController < ApplicationController
   def index
-    @all_movies = Movie.all
-
-    @movies = @all_movies.sort_by { |movie_hash| [movie_hash[:num_votes], (-movie_hash[:id])] }.reverse
+    @movies = Movie.order('num_votes DESC, id').limit(10)
   end
 
   def show

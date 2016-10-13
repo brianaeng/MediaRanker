@@ -4,7 +4,7 @@ class BooksControllerTest < ActionController::TestCase
   test "should get index" do
     get :index
     assert_response :success
-    assert_template 'books/index'
+    assert_template 'books/index' #:index
   end
 
   test "should get show" do

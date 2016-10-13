@@ -9,4 +9,8 @@ class AlbumTest < ActiveSupport::TestCase
     albums(:album2).title = "Title"
     assert albums(:album2).valid? "For some reason the title is not valid"
   end
+
+  test "An Album does not need an artist or description" do
+    assert albums(:album3).valid? "An album without an artist and description is valid"
+  end
 end

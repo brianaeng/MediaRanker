@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
   def index
-    @books = Book.all.sort_by { |book_hash| [book_hash[:num_votes], (-book_hash[:id])] }.reverse
+    @books = Book.order('num_votes DESC, id').limit(10)
   end
 
   def show

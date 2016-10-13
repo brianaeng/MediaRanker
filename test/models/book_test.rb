@@ -9,4 +9,8 @@ class BookTest < ActiveSupport::TestCase
     books(:book2).title = "Title"
     assert books(:book2).valid? "For some reason the title is not valid"
   end
+
+  test "A Book does not need an author or description" do
+    assert books(:book3).valid? "A book without an author and description is valid"
+  end
 end

@@ -7,7 +7,13 @@ movie1:
   description: MyText
 
 movie2:
-  title: 
+  title:
   num_votes: 1
   director: Director2
   description: MyText
+
+movie3:
+  title: Meow
+  num_votes: 0
+  director:
+  description:

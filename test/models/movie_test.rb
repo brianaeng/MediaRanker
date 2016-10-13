@@ -9,4 +9,8 @@ class MovieTest < ActiveSupport::TestCase
     movies(:movie2).title = "Title"
     assert movies(:movie2).valid? "For some reason the title is not valid"
   end
+
+  test "A Movie does not need a director or description" do
+    assert movies(:movie3).valid? "A movie without a director and description is valid"
+  end
 end
