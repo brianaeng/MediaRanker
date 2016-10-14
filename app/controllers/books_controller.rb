@@ -34,7 +34,7 @@ class BooksController < ApplicationController
     @book.num_votes += 1
     @book.save
 
-    redirect_to book_path(@book.id)
+    redirect_to :back
   end
 
   def edit

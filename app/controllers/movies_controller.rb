@@ -34,7 +34,7 @@ class MoviesController < ApplicationController
     @movie.num_votes += 1
     @movie.save
 
-    redirect_to movie_path(@movie.id)
+    redirect_to :back
   end
 
   def edit

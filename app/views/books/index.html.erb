@@ -1,25 +1,29 @@
+<article class="index-page">
+  <table>
+    <tr>
+      <th>Ranking</th>
+      <th>Title</th>
+      <th>Author</th>
+    </tr>
 
-<table>
-  <tr>
-    <th>Ranking</th>
-    <th>Name</th>
-    <th>Upvote</th>
-  </tr>
+    <% @books.each do |book| %>
+    <tr>
+      <td>
+        <%= link_to "⬆", book_upvote_path(book.id), method: :patch %>
+        Ranked: <%= book.num_votes %>
+      </td>
+      <td>
+        <%= link_to book.title, {action: 'show', id: book}, method: :get %>
+      </td>
+      <td>
+        <%= book.author %>
+      </td>
+    </tr>
+    <% end %>
+  </table>
 
-  <% @books.each do |book| %>
-  <tr>
-    <td>
-      Ranked: <%= book.num_votes %>
-    </td>
-    <td>
-      <%= link_to book.title, {action: 'show', id: book}, method: :get %>
-    </td>
-    <td>
-      <%= button_to "Upvote", book_upvote_path(book.id), method: :patch %>
-    </td>
-  </tr>
-  <% end %>
-</table>
-
-<%= button_to "View All Media", root_path, method: :get %>
-<%= button_to "Add a Book", new_book_path, method: :get %>
+  <div class="index-buttons">
+  <%= button_to "View All Media", root_path, method: :get %>
+  <%= button_to "Add a Book", new_book_path, method: :get %>
+  </div>
+</article>

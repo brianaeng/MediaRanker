@@ -1,4 +1,5 @@
 class AlbumsController < ApplicationController
+
   def index
     @albums = Album.order('num_votes DESC, id').limit(10)
   end
@@ -34,7 +35,7 @@ class AlbumsController < ApplicationController
     @album.num_votes += 1
     @album.save
 
-    redirect_to album_path(@album.id)
+    redirect_to :back
   end
 
   def edit
@@ -71,4 +72,5 @@ class AlbumsController < ApplicationController
       render status: 404
     end
   end
+
 end
