@@ -50,6 +50,7 @@ header {
 
 header h2 {
   font-family: 'Bungee Inline', cursive;
+  font-size: 3.25rem;
 }
 
 header h2 a:hover {
@@ -59,10 +60,12 @@ header h2 a:hover {
 header h3 {
   font-family: 'Bungee', cursive;
   color: rgb(189, 189, 189);
+  font-size: 1.5rem;
 }
 
 h2, h3 {
   font-family: 'Bungee Hairline', cursive;
+  font-size: 2rem;
 }
 
 a {
@@ -76,9 +79,7 @@ a:hover {
 /*-- HOMEPAGE --*/
 .category {
   display: inline-block;
-  height: 3rem;
   padding: 1rem;
-  vertical-align: text-top;
 }
 
 .category h3 {
