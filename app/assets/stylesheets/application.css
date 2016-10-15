@@ -108,6 +108,10 @@ td {
   font-size: 1.5rem;
 }
 
+.index-page {
+  margin-bottom: 3rem;
+}
+
 /*-- SHOW --*/
 .ranked-box * {
   text-align: center;
