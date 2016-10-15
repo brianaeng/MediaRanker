@@ -1,6 +1,6 @@
 class MoviesController < ApplicationController
   def index
-    @movies = Movie.order('num_votes DESC, id').limit(10)
+    @movies = Movie.order('num_votes DESC, id')
   end
 
   def show

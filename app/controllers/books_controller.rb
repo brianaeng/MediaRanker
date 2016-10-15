@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
   def index
-    @books = Book.order('num_votes DESC, id').limit(10)
+    @books = Book.order('num_votes DESC, id')
   end
 
   def show

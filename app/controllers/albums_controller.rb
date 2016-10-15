@@ -1,7 +1,7 @@
 class AlbumsController < ApplicationController
 
   def index
-    @albums = Album.order('num_votes DESC, id').limit(10)
+    @albums = Album.order('num_votes DESC, id')
   end
 
   def show
