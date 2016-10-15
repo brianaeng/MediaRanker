@@ -61,11 +61,10 @@ class AlbumsControllerTest < ActionController::TestCase
     delete :destroy, {id: 324987324}
     assert_response :missing
   end
-  
+
   test "destroying should subtract one to the database" do
     assert_difference('Album.count', -1) do
       delete :destroy, {id: albums(:album1).id}
     end
   end
-
 end

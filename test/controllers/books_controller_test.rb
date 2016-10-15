@@ -4,7 +4,7 @@ class BooksControllerTest < ActionController::TestCase
   test "should get index" do
     get :index
     assert_response :success
-    assert_template 'books/index' #:index
+    assert_template 'books/index' #could also use :index
   end
 
   test "should get show" do
@@ -23,7 +23,6 @@ class BooksControllerTest < ActionController::TestCase
     params = {book: {title: 'test', num_votes: 0, author: 'bob', description: 'none'}}
     post :create, params
     assert_response :redirect
-    #can't get this assert_redirected_to to work?
   end
 
   test "creating should add one to the database" do
@@ -67,5 +66,4 @@ class BooksControllerTest < ActionController::TestCase
       post :destroy, {id: books(:book1).id}
     end
   end
-
 end

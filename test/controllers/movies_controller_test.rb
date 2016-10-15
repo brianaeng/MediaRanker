@@ -66,5 +66,4 @@ class MoviesControllerTest < ActionController::TestCase
     delete :destroy, {id: 324987324}
     assert_response :missing
   end
-
 end
