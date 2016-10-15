@@ -3,7 +3,7 @@
     <tr>
       <th>Ranking</th>
       <th>Name</th>
-      <th>Director</th>
+      <th class="remove">Director</th>
     </tr>
 
     <% @movies.each do |movie| %>
@@ -15,7 +15,7 @@
       <td>
         <%= link_to movie.title, {action: 'show', id: movie}, method: :get %>
       </td>
-      <td>
+      <td class="remove">
         <%= movie.director %>
       </td>
     </tr>

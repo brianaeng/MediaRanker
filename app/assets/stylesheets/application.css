@@ -45,7 +45,7 @@ article {
 }
 
 header {
-  border-bottom: 2px rgb(97, 97, 97) solid;
+  border-bottom: 3px rgb(97, 97, 97) solid;
 }
 
 header h2 {
@@ -107,6 +107,10 @@ td {
   width: 33.33333%;
 }
 
+.table {
+  width: 100%;
+}
+
 .button_to {
   display: inline-block;
 }
@@ -165,4 +169,9 @@ td {
 .category-item label {
   font-size: 1.3rem;
   font-weight: bold;
+}
+
+/*-- MEDIA QUERIES --*/
+@media only screen and (max-width: 73em) {
+  .remove { display: none; }
 }

@@ -3,7 +3,7 @@
     <tr>
       <th>Ranking</th>
       <th>Title</th>
-      <th>Author</th>
+      <th class="remove">Author</th>
     </tr>
 
     <% @books.each do |book| %>
@@ -15,7 +15,7 @@
       <td>
         <%= link_to book.title, {action: 'show', id: book}, method: :get %>
       </td>
-      <td>
+      <td class="remove">
         <%= book.author %>
       </td>
     </tr>
