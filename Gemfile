@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+#Adding faker because I'm tired of typing "test"
+gem 'faker'
 #Gems for pushing to Heroku
 gem 'pg', group: :production
 gem 'rails_12factor', group: :production

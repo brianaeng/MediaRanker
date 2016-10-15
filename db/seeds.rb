@@ -5,3 +5,15 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+20.times do |album|
+  Album.create(title: Faker::Book.title, artist: Faker::Name.name , description: Faker::Lorem.paragraph)
+end
+
+20.times do |book|
+  Book.create(title: Faker::Book.title, author: Faker::Name.name , description: Faker::Lorem.paragraph)
+end
+
+20.times do |movie|
+  Movie.create(title: Faker::Book.title, director: Faker::Name.name , description: Faker::Lorem.paragraph)
+end
