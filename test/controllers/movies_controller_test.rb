@@ -33,9 +33,9 @@ class MoviesControllerTest < ActionController::TestCase
   end
 
   test "should be able to upvote" do
+    @request.env['HTTP_REFERER'] = 'movies/show'
     patch :upvote, {id: movies(:movie1).id}
     assert_response :redirect
-    assert_redirected_to movie_path
   end
 
   test "should get edit" do

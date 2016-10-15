@@ -34,9 +34,9 @@ class AlbumsControllerTest < ActionController::TestCase
   end
 
   test "should be able to upvote" do
+    @request.env['HTTP_REFERER'] = 'albums/show'
     patch :upvote, {id: albums(:album1).id}
     assert_response :redirect
-    assert_redirected_to album_path
   end
 
   test "should get edit" do

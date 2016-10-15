@@ -33,9 +33,9 @@ class BooksControllerTest < ActionController::TestCase
   end
 
   test "should be able to upvote" do
+    @request.env['HTTP_REFERER'] = 'books/show'
     patch :upvote, {id: books(:book1).id}
     assert_response :redirect
-    assert_redirected_to book_path
   end
 
   test "should get edit" do
