@@ -32,8 +32,10 @@ class AlbumsController < ApplicationController
   def upvote
     find
 
-    @album.num_votes += 1
-    @album.save
+    # @album.num_votes += 1
+    # @album.save
+
+    @album.upvote
 
     redirect_to :back
   end
