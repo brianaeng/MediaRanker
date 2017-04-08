@@ -10,7 +10,7 @@
     <tr>
       <td>
         <%= link_to "⬆", book_upvote_path(book.id), method: :patch %>
-        Ranked: <%= book.num_votes %>
+        Votes: <%= book.num_votes %>
       </td>
       <td>
         <%= link_to book.title, {action: 'show', id: book}, method: :get %>
