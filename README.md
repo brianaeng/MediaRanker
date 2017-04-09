@@ -5,7 +5,7 @@
 In development, testing was a focus during the project. You can see the tests in the 'test' folder.
 
 ## Tech Stack
-* **Languages** - Ruby
+* **Languages** - Ruby, HTML/CSS
 * **Framework** - Rails
 * **Databases** - PostgreSQL
 * **Infrastructure** - Heroku
